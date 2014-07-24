@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<head>
+    <title>Pusher Batch Auth</title>
+</head>
+<body>
+    <script src="app_key.js"></script>
+    <script>if(!window.PUSHER_APP_KEY){ alert('Please create app_key.js with a valid Pusher key'); }</script>
+    <script src="//js.pusher.com/2.2/pusher.min.js"></script>
+    <script src="lib/pusher-auth.js"></script>
+    <script>
+
+        // Create pusher instance
+        Pusher.log = window.console.log;
+        var pusher = new Pusher(window.PUSHER_APP_KEY, {
+            authTransport: 'buffered',
+            authEndpoint: 'auth.php',
+            authDelay: 2000
+        });
+
+        // Subscribe to multiple private channels
+        var channelA = pusher.subscribe('private-a');
+        channelA.bind('pusher:subscription_succeeded', function(){ console.log('Subscribed to private-a') });
+        channelA.bind('pusher:subscription_error', function(){ console.log('Subscription error for private-a', arguments) });
+
+        var channelB = pusher.subscribe('private-b');
+        channelB.bind('pusher:subscription_succeeded', function(){ console.log('Subscribed to private-b') });
+        channelB.bind('pusher:subscription_error', function(){ console.log('Subscription error for private-b', arguments) });
+
+        var channelC = pusher.subscribe('private-c');
+        channelC.bind('pusher:subscription_succeeded', function(){ console.log('Subscribed to private-c') });
+        channelC.bind('pusher:subscription_error', function(){ console.log('Subscription error for private-c', arguments) });
+
+        var channelD = pusher.subscribe('private-d'); // this one will fail
+        channelD.bind('pusher:subscription_succeeded', function(){ console.log('Subscribed to private-d') });
+        channelD.bind('pusher:subscription_error', function(){ console.log('Subscription error for private-d', arguments) });
+
+    </script>
+</body>

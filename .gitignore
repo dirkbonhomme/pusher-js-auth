@@ -1,0 +1,11 @@
+!.gitignore
+
+app_key.js
+app_key.php
+
+.buildpath
+.project
+.settings
+.DS_Store
+.vagrant
+.idea

@@ -1,0 +1,16 @@
+{
+  "name": "pusher-js-auth",
+  "version": "1.0.0",
+  "license": "MIT",
+  "description": "Pusher plugin for batching auth requests in one HTTP call",
+  "keywords": [
+    "pusher",
+    "client",
+    "auth"
+  ],
+  "author": "Dirk Bonhomme <dirk@bytelogic.be>",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/dirkbonhomme/pusher-js-auth"
+  }
+}
