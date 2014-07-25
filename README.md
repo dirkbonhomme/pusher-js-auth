@@ -1,7 +1,73 @@
 # Pusher plugin for authentication
 
-Pusher plugin for batching auth requests in one HTTP call
+Pusher plugin for batching auth requests in one HTTP call.  
+When subscribing to multiple private- and presence channels at once, your browser has to make an HTTP request for each channel. This plugin enables you to process multiple channel authentications within one request.
 
-## Overview
+## Prerequisites
 
-...
+This is a plugin for the official [Pusher](http://pusher.com) JavaScript library and compatible with the latest 2.2.x release. Make sure you have a working implementation up and running.
+
+Documentation and configuration options are explained at the [Pusher-js Github page](https://github.com/pusher/pusher-js)
+
+## Usage
+
+Load the plugin after including the Pusher library
+
+    <script src="//js.pusher.com/2.2/pusher.min.js"></script>
+    <script src="lib/pusher-auth.js"></script>
+
+## Configuration
+
+This plugin comes with a few extra configuration parameters. The whole list is available at the [Pusher-js Github page](https://github.com/pusher/pusher-js#configuration)
+
+    var pusher = new Pusher(API_KEY, {
+        authTransport: 'buffered',
+        authDelay: 200
+    });
+
+### `authTransport` (String)
+
+Required field. Use "buffered" to enable this plugin.
+
+### `authDelay` (Number)
+
+Optional, defaults to 0. Delay in milliseconds before executing an authentication request. The value can be as low as 0 when subcribing to multiple channels within the same event loop. Please note that the first authentication request is postponed anyway until the connection to Pusher succeeds.
+
+## Server side authentication
+
+Your authentication endpoint should be able to handle batched requests.
+
+### Incoming post data
+
+    socket_id[0]	  00000.0000000
+    socket_id[1]	  00000.0000000
+    channel_name[0]	  private-a
+    channel_name[1]	  private-b
+
+### Expected output
+
+    {
+        "00000.0000000": {
+            "private-a": {
+                "status": 200, // HTTP status codes, optional on success
+                "data": {
+                    "auth": "xxxxxx:xxxxxxxxxxxxx"
+                }
+            },
+            "private-b": {
+                "status": 200,
+                "data": {
+                    "auth": "xxxxxx:xxxxxxxxxxxxx"
+                }
+            },
+            "private-c": {
+                "status": 403
+            }
+        }
+    }
+    
+Use one of the [server libraries](http://pusher.com/docs/libraries) to do most of the hard work.
+
+## Example implementation
+
+Copy `app_key.example.js` and `app_key.example.php` to `app_key.example.xx` and fill in your own Pusher data. Create a small PHP server and run index.html with your browser's debug console active.

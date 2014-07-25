@@ -14,10 +14,10 @@
         var pusher = new Pusher(window.PUSHER_APP_KEY, {
             authTransport: 'buffered',
             authEndpoint: 'auth.php',
-            authDelay: 2000
+            authDelay: 200
         });
 
-        // Subscribe to multiple private channels
+        // Immediately subscribe to multiple private channels
         var channelA = pusher.subscribe('private-a');
         channelA.bind('pusher:subscription_succeeded', function(){ console.log('Subscribed to private-a') });
         channelA.bind('pusher:subscription_error', function(){ console.log('Subscription error for private-a', arguments) });
@@ -33,6 +33,21 @@
         var channelD = pusher.subscribe('private-d'); // this one will fail
         channelD.bind('pusher:subscription_succeeded', function(){ console.log('Subscribed to private-d') });
         channelD.bind('pusher:subscription_error', function(){ console.log('Subscription error for private-d', arguments) });
+
+        // Subscribe with 150ms delay. This will be included in auth call for the above channels
+        setTimeout(function(){
+            var channelE = pusher.subscribe('private-e');
+            channelE.bind('pusher:subscription_succeeded', function(){ console.log('Subscribed to private-e') });
+            channelE.bind('pusher:subscription_error', function(){ console.log('Subscription error for private-e', arguments) });
+        }, 150);
+
+        // Subscribe with 3s delay. This will end up in a new auth call
+        setTimeout(function(){
+            var channelF = pusher.subscribe('private-f');
+            channelF.bind('pusher:subscription_succeeded', function(){ console.log('Subscribed to private-f') });
+            channelF.bind('pusher:subscription_error', function(){ console.log('Subscription error for private-f', arguments) });
+        }, 3000);
+
 
     </script>
 </body>
