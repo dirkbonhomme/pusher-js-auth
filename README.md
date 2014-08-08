@@ -39,8 +39,7 @@ Your authentication endpoint should be able to handle batched requests.
 
 ### Incoming post data
 
-    socket_id[0]	  00000.0000000
-    socket_id[1]	  00000.0000000
+    socket_id   	  00000.0000000
     channel_name[0]	  private-a
     channel_name[1]	  private-b
 

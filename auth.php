@@ -2,8 +2,8 @@
 $config = require 'app_key.php';
 
 $response = [];
-foreach($_POST['socket_id'] as $i => $socketId){
-    $channel = $_POST['channel_name'][$i];
+$socketId = $_POST['socket_id'];
+foreach($_POST['channel_name'] as $i => $channel){
     $status = ($channel === 'private-d')? 403 : 200;
     if(!isset($response[$socketId])) $response[$socketId] = [];
     $response[$socketId][$channel] = [
