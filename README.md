@@ -46,22 +46,20 @@ Your authentication endpoint should be able to handle batched requests.
 ### Expected output
 
     {
-        "00000.0000000": {
-            "private-a": {
-                "status": 200, // HTTP status codes, optional on success
-                "data": {
-                    "auth": "xxxxxx:xxxxxxxxxxxxx"
-                }
-            },
-            "private-b": {
-                "status": 200,
-                "data": {
-                    "auth": "xxxxxx:xxxxxxxxxxxxx"
-                }
-            },
-            "private-c": {
-                "status": 403
+        "private-a": {
+            "status": 200, // HTTP status codes, optional on success
+            "data": {
+                "auth": "xxxxxx:xxxxxxxxxxxxx"
             }
+        },
+        "private-b": {
+            "status": 200,
+            "data": {
+                "auth": "xxxxxx:xxxxxxxxxxxxx"
+            }
+        },
+        "private-c": {
+            "status": 403
         }
     }
     
