@@ -5,7 +5,7 @@ When subscribing to multiple private- and presence channels at once, your browse
 
 ## Prerequisites
 
-This is a plugin for the official [Pusher](http://pusher.com) JavaScript library and compatible with the latest 2.2.x release. Make sure you have a working implementation up and running.
+This is a plugin for the official [Pusher](http://pusher.com) JavaScript library and compatible with the latest 2.2.x and 3.0.x release. Make sure you have a working implementation up and running.
 
 Documentation and configuration options are explained at the [Pusher-js Github page](https://github.com/pusher/pusher-js)
 
@@ -13,8 +13,13 @@ Documentation and configuration options are explained at the [Pusher-js Github p
 
 Load the plugin after including the Pusher library
 
-    <script src="//js.pusher.com/2.2/pusher.min.js"></script>
+    <script src="//js.pusher.com/3.0/pusher.min.js"></script>
     <script src="lib/pusher-auth.js"></script>
+
+This plugin is also available on npm and bower:
+
+    npm install pusher-js-auth
+    bower install pusher-js-auth
 
 ## Configuration
 

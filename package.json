@@ -1,8 +1,9 @@
 {
   "name": "pusher-js-auth",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "license": "MIT",
   "description": "Pusher plugin for batching auth requests in one HTTP call",
+  "main": "lib/pusher-auth.js",
   "keywords": [
     "pusher",
     "client",

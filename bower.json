@@ -1,0 +1,23 @@
+{
+  "name": "pusher-js-auth",
+  "version": "1.2.0",
+  "homepage": "https://github.com/dirkbonhomme/pusher-js-auth",
+  "authors": [
+    "Dirk Bonhomme <dirk@bytelogic.be>"
+  ],
+  "description": "Pusher plugin for batching auth requests in one HTTP call",
+  "main": "lib/pusher-auth.js",
+  "keywords": [
+    "pusher",
+    "client",
+    "auth"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
