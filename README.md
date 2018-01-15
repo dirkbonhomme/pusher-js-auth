@@ -5,9 +5,9 @@ When subscribing to multiple private- and presence channels at once, your browse
 
 ## Prerequisites
 
-This is a plugin for the official [Pusher](http://pusher.com) JavaScript library and compatible with the latest 3.1.x release. Make sure you have a working implementation up and running.
+This is a plugin for the official [Pusher](http://pusher.com) JavaScript library and compatible with the latest 4.1.x release. Make sure you have a working implementation up and running.
 
-**Notice:** This version is not compatibile with Pusher 3.0 and older. Please use version [1.2.0](https://github.com/dirkbonhomme/pusher-js-auth/releases) of this plugin with older Pusher versions.
+**Notice:** This version is not compatible with Pusher 4.0 and older. Please use version [2.0.0](https://github.com/dirkbonhomme/pusher-js-auth/releases) of this plugin with older Pusher versions.
 
 Documentation and configuration options are explained at the [Pusher-js Github page](https://github.com/pusher/pusher-js)
 
@@ -15,7 +15,7 @@ Documentation and configuration options are explained at the [Pusher-js Github p
 
 Load the plugin after including the Pusher library
 
-    <script src="//js.pusher.com/3.0/pusher.min.js"></script>
+    <script src="//js.pusher.com/4.2/pusher.min.js"></script>
     <script src="lib/pusher-auth.js"></script>
 
 This plugin is also available on npm and bower:
@@ -28,13 +28,13 @@ This plugin is also available on npm and bower:
 This plugin comes with a few extra configuration parameters. The whole list is available at the [Pusher-js Github page](https://github.com/pusher/pusher-js#configuration)
 
     var pusher = new Pusher(API_KEY, {
-        authTransport: 'buffered',
+        authorizer: PusherBatchAuthorizer,
         authDelay: 200
     });
 
-### `authTransport` (String)
+### `authorizer` (Function)
 
-Required field. Use "buffered" to enable this plugin.
+Pass the function exposed by this plugin here. It is exposed as a module export when using AMD or CommonJS, and as the `PusherBatchAuthorizer` global otherwise.
 
 ### `authDelay` (Number)
 
