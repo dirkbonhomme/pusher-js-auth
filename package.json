@@ -1,6 +1,6 @@
 {
-  "name": "helpscout-pusher-js-auth",
-  "version": "0.0.1",
+  "name": "pusher-js-auth",
+  "version": "3.0.1",
   "license": "MIT",
   "description": "Pusher plugin for batching auth requests in one HTTP call",
   "main": "lib/pusher-auth.js",
@@ -9,9 +9,9 @@
     "client",
     "auth"
   ],
-  "author": "Brett Jones <brett@helpscout.com>",
+  "author": "Dirk Bonhomme <dirk@bytelogic.be>",
   "repository": {
     "type": "git",
-    "url": "git://github.com/helpscout/pusher-js-auth"
+    "url": "git://github.com/dirkbonhomme/pusher-js-auth"
   }
 }
