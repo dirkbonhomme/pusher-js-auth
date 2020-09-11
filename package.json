@@ -18,6 +18,12 @@
     }
   },
   "author": "Dirk Bonhomme <dirk@bytelogic.be>",
+  "contributors": [
+      {
+          "name": "Christophe Coevoet",
+          "url": "https://github.com/stof"
+      }
+  ],
   "repository": {
     "type": "git",
     "url": "git://github.com/dirkbonhomme/pusher-js-auth"
