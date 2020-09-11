@@ -5,9 +5,9 @@ When subscribing to multiple private- and presence channels at once, your browse
 
 ## Prerequisites
 
-This is a plugin for the official [Pusher](http://pusher.com) JavaScript library and compatible with the latest 4.1.x release. Make sure you have a working implementation up and running.
+This is a plugin for the official [Pusher](http://pusher.com) JavaScript library and compatible with the latest 7.0.x release. Make sure you have a working implementation up and running.
 
-**Notice:** This version is not compatible with Pusher 4.0 and older. Please use version [2.0.0](https://github.com/dirkbonhomme/pusher-js-auth/releases) of this plugin with older Pusher versions.
+**Notice:** This version is not compatible with Pusher 6.0 and older. Please use version [3.0](https://github.com/dirkbonhomme/pusher-js-auth/releases) of this plugin with older Pusher versions.
 
 Documentation and configuration options are explained at the [Pusher-js Github page](https://github.com/pusher/pusher-js)
 
@@ -38,7 +38,7 @@ Pass the function exposed by this plugin here. It is exposed as a module export 
 
 ### `authDelay` (Number)
 
-Optional, defaults to 0. Delay in milliseconds before executing an authentication request. The value can be as low as 0 when subcribing to multiple channels within the same event loop. Please note that the first authentication request is postponed anyway until the connection to Pusher succeeds.
+Optional, defaults to 0. Delay in milliseconds before executing an authentication request. The value can be as low as 0 when subscribing to multiple channels within the same event loop. Please note that the first authentication request is postponed anyway until the connection to Pusher succeeds.
 
 ## Server side authentication
 
