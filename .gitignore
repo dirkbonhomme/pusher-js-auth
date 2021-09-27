@@ -1,4 +1,6 @@
 !.gitignore
+/node_modules
+/package-lock.json
 
 app_key.js
 app_key.php
