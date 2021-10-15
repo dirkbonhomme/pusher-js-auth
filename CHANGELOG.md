@@ -1,5 +1,9 @@
 # Changelog
 
+## 4.0.1 (2021-10-15)
+
+- [UPDATE] Add type definitions (kudos @stof)
+
 ## 4.0.0 (2020-09-11)
 
 - [UPDATE] Refactored plugin for compatibility with Pusher client 7.x (kudos @stof)
