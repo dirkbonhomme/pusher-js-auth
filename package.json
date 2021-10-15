@@ -4,6 +4,7 @@
   "license": "MIT",
   "description": "Pusher plugin for batching auth requests in one HTTP call",
   "main": "lib/pusher-auth.js",
+  "types": "lib/pusher-auth.d.ts",
   "keywords": [
     "pusher",
     "client",
@@ -16,6 +17,9 @@
     "pusher-js": {
       "optional": true
     }
+  },
+  "devDependencies": {
+    "pusher-js": "^7"
   },
   "author": "Dirk Bonhomme <dirk@bytelogic.be>",
   "contributors": [
